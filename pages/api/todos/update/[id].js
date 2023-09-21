@@ -3,7 +3,7 @@ import cosmosSingleton from "../../../../lib/cosmos";
 import { clean } from "../../../../lib/utils";
 
 export default async function handle(req, res) {
-  console.log(`atleast updating.`);
+  console.log(`updating todo...`);
   if (req.method === "PUT") {
     await cosmosSingleton.initialize();
     const container = cosmosSingleton.getContainer();

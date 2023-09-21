@@ -58,9 +58,9 @@ export default function Home() {
       setTodos([...todos, newTodo]);
       setInputValue("");
       toast({
-        title: "Todo created.",
+        title: "Todo created!",
         status: "success",
-        duration: 3000,
+        duration: 2000,
         isClosable: true,
       });
     }
@@ -76,12 +76,18 @@ export default function Home() {
   const handleDelete = async (id) => {
     await deleteTodo(id);
     setTodos(todos.filter((todo) => todo.id !== id));
+    toast({
+      title: "Todo deleted!",
+      status: "error",
+      duration: 2000,
+      isClosable: true,
+    });
   };
 
   return (
     <Box>
       <Heading mt={8} textAlign="center">
-        Azure Cosmos DB Starter – Todo App
+        Todo App
       </Heading>
       <VStack mt={4} spacing={4} mx="auto" maxW="md">
         <Input

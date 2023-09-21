@@ -4,6 +4,7 @@ import cosmosSingleton from "../../../lib/cosmos";
 import { clean } from "../../../lib/utils";
 
 export default async function handler(req, res) {
+  console.log(`creating todo...`);
   if (req.method === "POST") {
     await cosmosSingleton.initialize();
     const container = cosmosSingleton.getContainer();

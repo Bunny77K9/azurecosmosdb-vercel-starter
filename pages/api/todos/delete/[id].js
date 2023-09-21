@@ -2,6 +2,7 @@
 import cosmosSingleton from "../../../../lib/cosmos";
 
 export default async function handler(req, res) {
+  console.log(`deleting todo...`);
   if (req.method === "DELETE") {
     await cosmosSingleton.initialize();
     const container = cosmosSingleton.getContainer();
